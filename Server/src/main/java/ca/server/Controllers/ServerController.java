@@ -1,10 +1,8 @@
 package ca.server.Controllers;
 
 import ca.server.Model.Registro;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -29,6 +27,15 @@ public class ServerController {
     @GetMapping("/registro")
     public List<Registro> getTregistros() {
         return registros;
+    }
+    @GetMapping("/registro/{id}")
+    public Registro GetOne(@PathVariable("id") long registroId){
+        for(Registro registro : registros){
+            if(registro.getId() == registroId){
+                return registro;
+            }
+        }
+        throw new IllegalArgumentException();
     }
 
 

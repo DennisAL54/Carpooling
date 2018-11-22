@@ -5,5 +5,11 @@ curl -i -H "Content-Type: application/json" -X POST -d '{
         "name": "DOOT"
     }' localhost:8080/registro
 
-#Leer Registros
+#Leer Registros:
 curl -i -H "Content-Type: application/json" -X GET localhost:8080/registro
+
+#Leer Registro especifico:
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/registro/2
+
+#Editar un registro:
+
