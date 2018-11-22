@@ -1,16 +1,14 @@
 package ca.server.Model;
 
 public class Registro {
-
-    public Registro(long id, String name) {
-        this.id = id;
-        Name = name;
-    }
-
     private long id;
     private String Name;
 
     public Registro() {
+    }
+    public Registro(long id, String name) {
+        this.id = id;
+        Name = name;
     }
 
     public long getId() {
