@@ -1,8 +1,9 @@
 # Leer HOLA:
 curl -i -X GET localhost:8080/hello
+
 # Añadir registro:
 curl -i -H "Content-Type: application/json" -X POST -d '{
-        "name": "DOOT"
+        "name": "JOHN"
     }' localhost:8080/registro
 
 #Leer Registros:
@@ -13,5 +14,5 @@ curl -i -H "Content-Type: application/json" -X GET localhost:8080/registro/2
 
 #Editar un registro:
 curl -i -H "Content-Type: application/json" -X POST -d '{
-        "name": "DOOTY"
+        "name": "CARL"
     }' localhost:8080/registro/2
