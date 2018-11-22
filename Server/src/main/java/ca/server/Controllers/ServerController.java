@@ -28,6 +28,7 @@ public class ServerController {
     public List<Registro> getTregistros() {
         return registros;
     }
+
     @GetMapping("/registro/{id}")
     public Registro GetOne(@PathVariable("id") long registroId){
         for(Registro registro : registros){
@@ -36,6 +37,23 @@ public class ServerController {
             }
         }
         throw new IllegalArgumentException();
+    }
+    @PostMapping("/registro/{id}")
+    public Registro editregistro(
+            @PathVariable("id") long RegistroId,
+            @RequestBody Registro newRegistro
+    ){
+        for(Registro registro : registros){
+            if(registro.getId() == RegistroId){
+                registros.remove(registro);
+                newRegistro.setId(RegistroId);
+                registros.add(newRegistro);
+                return registro;
+            }
+        }
+        throw new IllegalArgumentException();
+
+
     }
 
 
