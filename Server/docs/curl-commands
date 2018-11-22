@@ -12,4 +12,6 @@ curl -i -H "Content-Type: application/json" -X GET localhost:8080/registro
 curl -i -H "Content-Type: application/json" -X GET localhost:8080/registro/2
 
 #Editar un registro:
-
+curl -i -H "Content-Type: application/json" -X POST -d '{
+        "name": "DOOTY"
+    }' localhost:8080/registro/2
