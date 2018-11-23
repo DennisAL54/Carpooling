@@ -25,6 +25,8 @@ public class socketR {
             }
             entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String mensaje = entrada.readLine();
+            salida = new DataOutputStream(socket.getOutputStream());
+            socket.close();
 
         }catch(Exception e){};
 
