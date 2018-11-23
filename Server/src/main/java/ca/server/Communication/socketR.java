@@ -28,7 +28,7 @@ public class socketR {
             salida = new DataOutputStream(socket.getOutputStream());
             socket.close();
 
-        }catch(Exception e){};
+        }catch(Exception e){}
 
     }
 
